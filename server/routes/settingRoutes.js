@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.route('/')
     .get(getSettings)
-    .put(protect, authorize('admin'), updateSettings);
+    .put(protect, authorize('ADMIN'), updateSettings);
 
 module.exports = router;
