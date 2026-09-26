@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../api';
 import { useAuthStore } from '../../context/authStore';
 
 export default function AdminLogin() {
@@ -18,7 +18,7 @@ export default function AdminLogin() {
         setLoading(true);
         
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+            const res = await api.post('/auth/login', { email, password });
             if (res.data.success) {
                 login(res.data.data, res.data.token);
                 navigate('/admin/dashboard');

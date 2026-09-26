@@ -7,8 +7,13 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 // Middleware
+const allowedOrigins = ['http://localhost:5173', 'http://localhost:5174', 'http://127.0.0.1:5173', 'http://127.0.0.1:5174'];
+if (process.env.FRONTEND_URL) {
+    allowedOrigins.push(process.env.FRONTEND_URL);
+}
+
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174', 'http://127.0.0.1:5173', 'http://127.0.0.1:5174'],
+    origin: allowedOrigins,
     credentials: true,
 }));
 const path = require('path');
@@ -46,10 +51,11 @@ app.post('/api/upload', upload.single('image'), (req, res) => {
     if (!req.file) {
         return res.status(400).json({ success: false, message: 'No file uploaded' });
     }
-    // Return the URL path
+    // Return the URL path dynamically based on the server's host
+    const baseUrl = `${req.protocol}://${req.get('host')}`;
     res.status(200).json({ 
         success: true, 
-        imageUrl: `http://localhost:5000/uploads/${req.file.filename}` 
+        imageUrl: `${baseUrl}/uploads/${req.file.filename}` 
     });
 });
 
