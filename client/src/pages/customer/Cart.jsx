@@ -1,9 +1,18 @@
+import { useState, useEffect } from 'react';
 import { useCartStore } from '../../context/cartStore';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import api from '../../api';
 
 export default function Cart() {
     const { items, removeFromCart, updateQuantity, getCartTotal } = useCartStore();
+    const [deliveryFeeBase, setDeliveryFeeBase] = useState(50);
+
+    useEffect(() => {
+        api.get('/settings')
+           .then(res => setDeliveryFeeBase(res.data.data?.deliveryFee || 50))
+           .catch(err => console.error(err));
+    }, []);
 
     // A collection of high-quality, reliable static food images for fallback
     const defaultFoodImages = [
@@ -125,14 +134,14 @@ export default function Cart() {
                             </div>
                             <div className="flex justify-between">
                                 <span>Delivery Fee</span>
-                                <span className="font-medium text-white">₹50</span>
+                                <span className="font-medium text-white">₹{deliveryFeeBase}</span>
                             </div>
                         </div>
                         <div className="border-t border-zinc-800 pt-6 mb-8">
                             <div className="flex justify-between items-end">
                                 <span className="font-bold text-white text-lg">Total</span>
                                 <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">
-                                    ₹{getCartTotal() + 50}
+                                    ₹{getCartTotal() + deliveryFeeBase}
                                 </span>
                             </div>
                         </div>
