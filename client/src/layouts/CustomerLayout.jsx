@@ -39,7 +39,11 @@ export default function CustomerLayout() {
                                 </li>
                                 <li className="flex items-center gap-3 justify-center md:justify-start mt-4">
                                     <span className="text-xl">📞</span>
-                                    <a href="tel:09908534750" className="hover:text-primary transition-colors">09908534750</a>
+                                    <a href="tel:8555938190" className="hover:text-primary transition-colors">8555938190</a>
+                                </li>
+                                <li className="flex items-center gap-3 justify-center md:justify-start mt-2">
+                                    <span className="text-xl">📞</span>
+                                    <a href="tel:6304454153" className="hover:text-primary transition-colors">6304454153</a>
                                 </li>
                             </ul>
                         </div>
