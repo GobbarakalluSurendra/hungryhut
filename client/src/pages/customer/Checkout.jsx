@@ -23,14 +23,20 @@ export default function Checkout() {
         paymentMethod: 'ONLINE'
     });
 
+    const [deliveryFeeBase, setDeliveryFeeBase] = useState(50);
+
     useEffect(() => {
         if (items.length === 0) {
             navigate('/cart');
+        } else {
+            api.get('/settings')
+               .then(res => setDeliveryFeeBase(res.data.data?.deliveryFee || 50))
+               .catch(err => console.error(err));
         }
     }, [items, navigate]);
 
     const subtotal = getCartTotal();
-    const deliveryFee = formData.orderType === 'DELIVERY' ? 50 : 0;
+    const deliveryFee = formData.orderType === 'DELIVERY' ? deliveryFeeBase : 0;
     const totalAmount = subtotal + deliveryFee;
 
     const loadRazorpay = () => {

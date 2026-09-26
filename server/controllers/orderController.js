@@ -37,8 +37,12 @@ exports.createOrder = async (req, res, next) => {
             });
         }
 
-        // Assume a static delivery fee for now as per MVP requirements
-        const deliveryFee = orderType === 'DELIVERY' ? 50 : 0; // Example static fee
+        // Fetch dynamic delivery fee
+        const Settings = require('../models/Settings');
+        let settings = await Settings.findOne();
+        if (!settings) settings = await Settings.create({ deliveryFee: 50 });
+
+        const deliveryFee = orderType === 'DELIVERY' ? settings.deliveryFee : 0;
         const totalAmount = calculatedSubtotal + deliveryFee;
 
         const order = await Order.create({

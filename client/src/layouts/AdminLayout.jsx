@@ -60,6 +60,7 @@ export default function AdminLayout() {
                     <Link to="/admin/products" className="p-3 rounded-lg hover:bg-white/5 transition-colors font-bold text-gray-300 hover:text-white">Products</Link>
                     <Link to="/admin/orders" className="p-3 rounded-lg hover:bg-white/5 transition-colors font-bold text-gray-300 hover:text-white">Orders</Link>
                     <Link to="/admin/reviews" className="p-3 rounded-lg hover:bg-white/5 transition-colors font-bold text-gray-300 hover:text-white">Reviews</Link>
+                    <Link to="/admin/settings" className="p-3 rounded-lg hover:bg-white/5 transition-colors font-bold text-gray-300 hover:text-white">Settings</Link>
                     <button onClick={logout} className="p-3 rounded-lg hover:bg-red-500/10 text-left text-red-500 font-bold transition-colors mt-8 border border-red-500/20">Logout</button>
                 </nav>
             </div>
