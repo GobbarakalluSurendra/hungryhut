@@ -1,11 +1,11 @@
 const express = require('express');
 const { getSettings, updateSettings } = require('../controllers/settingController');
-const { protect, admin } = require('../middleware/auth');
+const { protect, authorize } = require('../middleware/auth');
 
 const router = express.Router();
 
 router.route('/')
     .get(getSettings)
-    .put(protect, admin, updateSettings);
+    .put(protect, authorize('admin'), updateSettings);
 
 module.exports = router;
