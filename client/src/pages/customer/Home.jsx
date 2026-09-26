@@ -232,7 +232,7 @@ export default function Home() {
                                     transition={{ delay: 0.8, duration: 1 }}
                                 >
                                     <div className="w-16 h-1 bg-primary mb-6"></div>
-                                    <h3 className="text-5xl font-black text-white mb-4 uppercase tracking-tighter">Art on a Plate</h3>
+                                    <h3 className="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter">Art on a Plate</h3>
                                     <p className="text-xl text-gray-400 font-light">Meticulously crafted by world-renowned culinary masters.</p>
                                 </motion.div>
                             </motion.div>
@@ -250,7 +250,7 @@ export default function Home() {
                             >
                                 <motion.h2 
                                     variants={{ hidden: { opacity: 0, x: 100 }, visible: { opacity: 1, x: 0 } }}
-                                    className="text-6xl md:text-8xl font-black mb-10 leading-[0.9] uppercase tracking-tighter"
+                                    className="text-5xl md:text-8xl font-black mb-10 leading-[0.9] uppercase tracking-tighter"
                                 >
                                     The <br/>
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-amber-400 to-orange-500">
