@@ -122,11 +122,11 @@ export default function Home() {
                         initial={{ y: 100, opacity: 0, filter: "blur(20px)" }}
                         animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                         transition={{ duration: 1.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                        className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.85] mb-8 tracking-tighter uppercase"
+                        className="text-7xl md:text-9xl lg:text-[10rem] font-black text-white leading-[0.85] mb-8 tracking-tighter"
                     >
-                        WELCOME TO THE <br/>
+                        Hungry <br/>
                         <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-amber-400 to-orange-600 filter drop-shadow-[0_0_30px_rgba(245,158,11,0.4)]">
-                            HUNGRY HUT
+                            Hut
                         </span>
                     </motion.h1>
 
