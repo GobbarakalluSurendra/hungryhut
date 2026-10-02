@@ -306,7 +306,7 @@ export default function Home() {
                 <div className="flex whitespace-nowrap w-[200%]">
                     <motion.div 
                         animate={{ x: ["0%", "-50%"] }}
-                        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+                        transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
                         className="flex space-x-4 md:space-x-6 items-center w-full"
                     >
                         {/* Duplicate the array to create a seamless loop */}
