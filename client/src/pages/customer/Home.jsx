@@ -170,23 +170,23 @@ export default function Home() {
             </section>
 
             {/* Infinite Marquee Section */}
-            <div className="py-6 bg-primary overflow-hidden flex whitespace-nowrap border-y border-amber-400/30">
+            <div className="py-4 md:py-6 bg-primary overflow-hidden flex whitespace-nowrap border-y border-amber-400/30">
                 <motion.div 
                     animate={{ x: ["0%", "-50%"] }}
-                    transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-                    className="flex space-x-12 items-center w-max"
+                    transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+                    className="flex space-x-6 md:space-x-12 items-center w-max"
                 >
                     {[...Array(2)].map((_, i) => (
-                        <div key={i} className="flex items-center space-x-12">
+                        <div key={i} className="flex items-center space-x-6 md:space-x-12">
                             {[
                                 "Paneer Tikka", "Chicken 65", "Butter Chicken", "Veg Dum Biryani", 
                                 "Mushroom Biryani", "Ghee Fried Rice", "Chicken Fried Rice", 
                                 "Chicken Roast Biryani", "Paneer 65", "Paneer Butter Masala", 
                                 "Chicken Roast", "Chilli Chicken", "Lollipop Chicken", "Paneer Biryani"
                             ].map((item, index) => (
-                                <div key={index} className="flex items-center space-x-12">
-                                    <span className="text-4xl font-black text-black uppercase tracking-tighter">{item}</span>
-                                    <span className="text-2xl text-black/50">✦</span>
+                                <div key={index} className="flex items-center space-x-6 md:space-x-12">
+                                    <span className="text-2xl md:text-4xl font-black text-black uppercase tracking-tighter">{item}</span>
+                                    <span className="text-xl md:text-2xl text-black/50">✦</span>
                                 </div>
                             ))}
                         </div>
@@ -306,8 +306,8 @@ export default function Home() {
                 <div className="flex whitespace-nowrap w-[200%]">
                     <motion.div 
                         animate={{ x: ["0%", "-50%"] }}
-                        transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-                        className="flex space-x-6 items-center w-full"
+                        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+                        className="flex space-x-4 md:space-x-6 items-center w-full"
                     >
                         {/* Duplicate the array to create a seamless loop */}
                         {[
@@ -323,7 +323,7 @@ export default function Home() {
                             'Mushroom Biryani.jpg', 'Paneer 65.jpg', 'Paneer Butter Masala.jpg', 
                             'Paneer Tikka.jpg', 'paneer_biryani.jpg', 'Spicy dum biryani.jpg', 'Veg Dum Biryani.jpg'
                         ].map((img, i) => (
-                            <div key={i} className="inline-block relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shrink-0 group border border-white/5 shadow-2xl">
+                            <div key={i} className="inline-block relative w-40 h-40 md:w-80 md:h-80 rounded-2xl overflow-hidden shrink-0 group border border-white/5 shadow-2xl">
                                 <img 
                                     src={`/menu-images/${encodeURIComponent(img)}`} 
                                     alt={img} 
