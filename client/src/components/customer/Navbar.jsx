@@ -26,12 +26,12 @@ export default function Navbar() {
                         <motion.div 
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center"
+                            className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center"
                         >
                             <img src="/logo.png" alt="HungryHut Logo" className="w-full h-full object-contain" />
                         </motion.div>
-                        <span className="text-xl md:text-2xl font-black text-white tracking-widest uppercase">
-                            Hungry<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">Hut</span>
+                        <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">
+                            HUNGRY<span className="text-orange-500">HUT</span>
                         </span>
                     </Link>
 
