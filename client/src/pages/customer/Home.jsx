@@ -122,7 +122,7 @@ export default function Home() {
                         initial={{ y: 100, opacity: 0, filter: "blur(20px)" }}
                         animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                         transition={{ duration: 1.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                        className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.85] mb-8 tracking-tighter uppercase"
+                        className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black text-white leading-[0.85] mb-8 tracking-tighter uppercase"
                     >
                         WELCOME TO THE <br/>
                         <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-amber-400 to-orange-600 filter drop-shadow-[0_0_30px_rgba(245,158,11,0.4)]">
@@ -134,7 +134,7 @@ export default function Home() {
                         initial={{ y: 50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 1.2, delay: 0.6 }}
-                        className="text-xl md:text-3xl text-gray-300 mb-14 max-w-3xl font-light tracking-wide"
+                        className="text-lg md:text-2xl lg:text-3xl text-gray-300 mb-10 max-w-3xl font-light tracking-wide mx-auto lg:mx-0"
                     >
                         Slow-cooked dum biryanis, fiery starters, and rich curries. Experience the true taste of India in every single bite.
                     </motion.p>
