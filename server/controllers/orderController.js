@@ -69,13 +69,20 @@ exports.createOrder = async (req, res, next) => {
                 });
             }
 
-            // WhatsApp Notification
+            // Notifications
             const { sendWhatsAppNotification } = require('../utils/whatsapp');
-            await sendWhatsAppNotification({
+            const { sendEmailNotification } = require('../utils/email');
+            
+            const notificationPayload = {
                 amount: order.totalAmount,
                 itemsCount: order.items.length,
-                paymentStatus: order.paymentStatus
-            });
+                paymentStatus: order.paymentStatus,
+                customerName: order.customerName,
+                orderType: order.orderType
+            };
+
+            await sendWhatsAppNotification(notificationPayload);
+            await sendEmailNotification(notificationPayload);
         }
 
         res.status(201).json({ success: true, data: order });
