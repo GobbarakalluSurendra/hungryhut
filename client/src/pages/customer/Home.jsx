@@ -114,7 +114,7 @@ export default function Home() {
                     >
                         <div className="absolute inset-0 bg-primary blur-3xl opacity-40 rounded-full animate-pulse"></div>
                         <span className="relative inline-block py-2 px-8 rounded-full border border-primary/40 bg-black/60 backdrop-blur-xl text-primary font-bold tracking-[0.3em] text-xs uppercase shadow-[0_0_30px_rgba(245,158,11,0.2)]">
-                            The Ultimate Culinary Experience
+                            SPICE. FIRE. FLAVOR.
                         </span>
                     </motion.div>
                     
@@ -122,11 +122,11 @@ export default function Home() {
                         initial={{ y: 100, opacity: 0, filter: "blur(20px)" }}
                         animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                         transition={{ duration: 1.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                        className="text-7xl md:text-[10rem] font-black text-white leading-[0.85] mb-8 tracking-tighter uppercase"
+                        className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.85] mb-8 tracking-tighter uppercase"
                     >
-                        Taste <br/>
+                        WELCOME TO THE <br/>
                         <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-amber-400 to-orange-600 filter drop-shadow-[0_0_30px_rgba(245,158,11,0.4)]">
-                            Perfection
+                            HUNGRY HUT
                         </span>
                     </motion.h1>
 
@@ -136,7 +136,7 @@ export default function Home() {
                         transition={{ duration: 1.2, delay: 0.6 }}
                         className="text-xl md:text-3xl text-gray-300 mb-14 max-w-3xl font-light tracking-wide"
                     >
-                        A cinematic journey of flavors. Redefining gastronomy through art, fire, and passion.
+                        Slow-cooked dum biryanis, fiery starters, and rich curries. Experience the true taste of India in every single bite.
                     </motion.p>
 
                     <motion.div 
