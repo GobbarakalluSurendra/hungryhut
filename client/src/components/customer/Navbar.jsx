@@ -30,8 +30,8 @@ export default function Navbar() {
                         >
                             <img src="/logo.png" alt="HungryHut Logo" className="w-full h-full object-contain" />
                         </motion.div>
-                        <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">
-                            HUNGRY<span className="text-orange-500">HUT</span>
+                        <span className="text-2xl md:text-3xl font-black text-white tracking-tight">
+                            Hungry Hut
                         </span>
                     </Link>
 
@@ -60,15 +60,13 @@ export default function Navbar() {
                             )}
                         </Link>
 
-                        {user ? (
+                        {user && (
                             <div className="flex items-center gap-6">
-                                {user.role === 'admin' && (
+                                {user.role === 'ADMIN' && (
                                     <Link to="/admin/dashboard" className="text-xs font-medium text-gray-500 hover:text-primary tracking-widest uppercase">Admin</Link>
                                 )}
                                 <button onClick={handleLogout} className="text-xs font-medium text-red-500 hover:text-red-400 tracking-widest uppercase">Logout</button>
                             </div>
-                        ) : (
-                            <Link to="/admin/login" className="text-xs font-medium text-gray-500 hover:text-gray-300 tracking-widest uppercase">Admin Login</Link>
                         )}
                     </div>
 
@@ -111,18 +109,16 @@ export default function Navbar() {
                         Reviews
                     </Link>
                     
-                    <div className="pt-6 border-t border-white/10">
-                        {user ? (
+                    {user && (
+                        <div className="pt-6 border-t border-white/10">
                             <div className="space-y-6">
-                                {user.role === 'admin' && (
+                                {user.role === 'ADMIN' && (
                                     <Link onClick={() => setIsMobileMenuOpen(false)} to="/admin/dashboard" className="block text-sm font-medium text-primary tracking-widest uppercase">Admin Dashboard</Link>
                                 )}
                                 <button onClick={() => { setIsMobileMenuOpen(false); handleLogout(); }} className="block text-sm font-medium text-red-500 tracking-widest uppercase">Logout</button>
                             </div>
-                        ) : (
-                            <Link onClick={() => setIsMobileMenuOpen(false)} to="/admin/login" className="block text-sm font-medium text-gray-500 hover:text-gray-300 tracking-widest uppercase">Admin Login</Link>
-                        )}
-                    </div>
+                        </div>
+                    )}
                 </div>
             )}
         </nav>
