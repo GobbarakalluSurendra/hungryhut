@@ -11,7 +11,7 @@ exports.getCategories = async (req, res, next) => {
             query.isActive = true;
         }
 
-        const categories = await Category.find(query);
+        const categories = await Category.find(query).lean();
         res.status(200).json({ success: true, count: categories.length, data: categories });
     } catch (err) {
         next(err);

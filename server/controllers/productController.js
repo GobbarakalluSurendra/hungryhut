@@ -21,7 +21,7 @@ exports.getProducts = async (req, res, next) => {
         const products = await Product.find(query).populate({
             path: 'category',
             select: 'name'
-        });
+        }).lean();
 
         res.status(200).json({ success: true, count: products.length, data: products });
     } catch (err) {

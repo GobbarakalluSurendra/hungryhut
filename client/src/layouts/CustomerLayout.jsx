@@ -33,7 +33,7 @@ export default function CustomerLayout() {
                                 <li className="flex items-start gap-3 justify-center md:justify-start">
                                     <span className="text-xl">📍</span>
                                     <span className="leading-snug">
-                                        NANDYAL ROUTE, near Krr School,<br />
+                                        NANDYAL ROUTE, near KRR School,<br />
                                         Panyam, Andhra Pradesh 518112
                                     </span>
                                 </li>

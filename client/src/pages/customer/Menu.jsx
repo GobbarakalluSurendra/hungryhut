@@ -11,6 +11,19 @@ export default function Menu() {
     const addToCart = useCartStore(state => state.addToCart);
 
     useEffect(() => {
+        // Instant load from cache if available
+        const cached = sessionStorage.getItem('hh_menu_cache');
+        if (cached) {
+            try {
+                const parsed = JSON.parse(cached);
+                if (parsed.categories && parsed.products) {
+                    setCategories(parsed.categories);
+                    setProducts(parsed.products);
+                    setLoading(false);
+                }
+            } catch (e) {}
+        }
+
         const fetchData = async () => {
             try {
                 const [catsRes, prodsRes] = await Promise.all([
@@ -19,6 +32,10 @@ export default function Menu() {
                 ]);
                 setCategories(catsRes.data.data);
                 setProducts(prodsRes.data.data);
+                sessionStorage.setItem('hh_menu_cache', JSON.stringify({
+                    categories: catsRes.data.data,
+                    products: prodsRes.data.data
+                }));
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching menu", error);
@@ -128,6 +145,8 @@ export default function Menu() {
                                     <img 
                                         src={product.imageUrl || getDeterministicImage(product._id)} 
                                         alt={product.name}
+                                        loading="lazy"
+                                        decoding="async"
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 z-10 relative"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10 pointer-events-none"></div>
